@@ -1,0 +1,11 @@
+=== HITO 3: MITIGACIÓN TEMPORAL ===
+Fecha: Fri May 15 22:18:42 UTC 2026
+Hostname: copy-fail-Cristopher-Venegas
+
+algif_aead en lsmod:
+(módulo NO cargado - mitigación activa)
+
+Intento de exploit post-mitigación:
+Traceback (most recent call last):
+  File "copy_fail_exp.py", line 4, in <module>
+PermissionError: [Errno 1] Operation not permitted

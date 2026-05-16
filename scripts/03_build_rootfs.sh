@@ -68,7 +68,7 @@ mkdir -p "$INITRAMFS_DIR"/{proc,sys,dev,tmp,etc,root,home/student,run}
 # Usuario student (sin privilegios) y root
 cat > "$INITRAMFS_DIR/etc/passwd" << 'PASSWD'
 root:x:0:0:root:/root:/bin/sh
-student:x:1001:1001::/home/student:/bin/sh
+exec /bin/sh:x:1001:1001::/home/exec /bin/sh:/bin/sh
 PASSWD
 
 cat > "$INITRAMFS_DIR/etc/group" << 'GROUP'
@@ -99,7 +99,7 @@ echo "  ╚═══════════════════════
 echo ""
 
 # Login como student (sin privilegios) para simular el escenario LPE
-exec /bin/su - student
+exec /bin/su
 INITEOF
 chmod +x "$INITRAMFS_DIR/init"
 
